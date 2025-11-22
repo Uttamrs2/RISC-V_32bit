@@ -11,7 +11,7 @@ module TopModule (
     output zero, carry, overflow, negative,
     output [31:0] write_data,
     output [31:0] alu_operand2,
-    output branch, mem_read, mem_to_reg, mem_write, alu_src, reg_write,
+    output branch,reg_write,
     output [3:0] alu_control,   // Added output for ALU control signal
     output [1:0] alu_op         // Added output for ALU operation code
 );
@@ -62,10 +62,7 @@ module TopModule (
         .ALU_Control(alu_control)    // Output the ALU control signal
     );
 
-    // ALU Operand Multiplexing (for I-type and R-type instructions)
-    assign alu_operand2_internal = (alu_src) ? {{20{instruction[31]}}, instruction[31:20]} : read_data2;
-    assign alu_operand2 = alu_operand2_internal;  // Connecting alu_operand2 output for observation
-
+    
     // ALU
     ALU ALU1(
         .A(read_data1),
@@ -78,7 +75,6 @@ module TopModule (
         .Negative(negative)   // Connecting negative output if applicable
     );
 
-    // Write-back Data Multiplexing (this can be extended based on your memory model)
-    assign write_data = (mem_to_reg) ? alu_result : alu_result; // This is simplified; you may extend with actual memory if needed
+    
 
 endmodule
