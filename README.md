@@ -17,18 +17,10 @@ This project implements a basic 32-bit RISC-V processor (RV32I ISA), supporting 
   - Arithmetic: `ADD`, `SUB`, `AND`, `OR`, `XOR`, `SLL`, `SRL`, `SRA`
   - Immediate: `ADDI`, `ORI`, `ANDI`, etc.
   - Load/Store: `LW`, `SW`, `LH`, `SH`, `LB`, `SB`
-  - Branch: `BEQ`, `BNE`, `BLT`, `BGE`, `BLTU`, `BGEU`
-  - Jump: `JAL`, `JALR`
-  - System: `ECALL`, `EBREAK`
+  -
 - ✅ Register File with 32 registers (x0-x31)
-- ✅ 5-stage pipeline:
-  - Instruction Fetch (IF)
-  - Instruction Decode (ID)
-  - Execute (EX)
-  - Memory Access (MEM)
-  - Write Back (WB)
-- ✅ Hazard detection and forwarding unit
-- ✅ Immediate Generator module
+- 
+- 
 - ✅ Simple control unit based on opcode decoding
 - ✅ Program Counter (PC) logic with branch/jump handling
 - ✅ Simulation Testbench for functional validation
