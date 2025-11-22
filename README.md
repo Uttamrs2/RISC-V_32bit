@@ -5,8 +5,6 @@
 This project implements a basic 32-bit RISC-V processor (RV32I ISA), supporting core instructions and pipeline stages. The processor is designed using Verilog/SystemVerilog and targets FPGA or simulation platforms.
 
 > ISA Supported: **RV32I (Integer Base Instruction Set)**  
-> Pipeline Support: **5-stage pipeline (IF, ID, EX, MEM, WB)**  
-> Core Type: **Single-core, In-order Execution**
 
 ---
 
@@ -17,10 +15,7 @@ This project implements a basic 32-bit RISC-V processor (RV32I ISA), supporting 
   - Arithmetic: `ADD`, `SUB`, `AND`, `OR`, `XOR`, `SLL`, `SRL`, `SRA`
   - Immediate: `ADDI`, `ORI`, `ANDI`, etc.
   - Load/Store: `LW`, `SW`, `LH`, `SH`, `LB`, `SB`
-  -
 - ✅ Register File with 32 registers (x0-x31)
-- 
-- 
 - ✅ Simple control unit based on opcode decoding
 - ✅ Program Counter (PC) logic with branch/jump handling
 - ✅ Simulation Testbench for functional validation
