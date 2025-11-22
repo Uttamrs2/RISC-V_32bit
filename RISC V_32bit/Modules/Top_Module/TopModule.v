@@ -37,11 +37,9 @@ module TopModule (
     ControlUnit CU(
         .opcode(instruction[6:0]),
         .branch(branch),
-        .mem_read(mem_read),
-        .mem_to_reg(mem_to_reg),
+        
         .alu_op(alu_op),  // ALU operation code from Control Unit
-        .mem_write(mem_write),
-        .alu_src(alu_src),
+        
         .reg_write(reg_write)
     );
 
