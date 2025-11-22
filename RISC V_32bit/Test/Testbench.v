@@ -15,7 +15,7 @@ module TopModule_tb();
     wire zero, carry, overflow, negative;
     wire [31:0] write_data;
     wire [31:0] alu_operand2;
-    wire branch, mem_read, mem_to_reg, mem_write, alu_src, reg_write;
+    wire branch,reg_write;
     wire [3:0] alu_control;
     wire [1:0] alu_op;
 
@@ -35,10 +35,6 @@ module TopModule_tb();
         .write_data(write_data),
         .alu_operand2(alu_operand2),
         .branch(branch),
-        .mem_read(mem_read),
-        .mem_to_reg(mem_to_reg),
-        .mem_write(mem_write),
-        .alu_src(alu_src),
         .reg_write(reg_write),
         .alu_control(alu_control),
         .alu_op(alu_op)
