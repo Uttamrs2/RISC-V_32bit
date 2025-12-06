@@ -32,16 +32,16 @@ module ALU (
         case (ALU_Control)
             4'b0000: temp_result = A + B;        // ADD
             4'b0001: temp_result = A - B;        // SUB
-            4'b0010: Result = A * B;             // MUL
-            4'b0011: Result = (B != 0) ? A / B : 32'hDEAD_BEEF; // DIV, handle div by zero
-            4'b0100: Result = A & B;             // AND
-            4'b0101: Result = A | B;             // OR
-            4'b0110: Result = A ^ B;             // XOR
-            4'b0111: Result = ~A;                // COMPLEMENT (NOT)
-            4'b1000: Result = A << B[4:0];       // Logical Shift Left
-            4'b1001: Result = A >> B[4:0];       // Logical Shift Right
-            4'b1010: Result = $signed(A) >>> B[4:0]; // Arithmetic Shift Right
-            default: Result = 32'b0;
+            4'b0010: temp_result = A * B;             // MUL
+            4'b0011: temp_result = (B != 0) ? A / B : 32'hDEAD_BEEF; // DIV, handle div by zero
+            4'b0100: temp_result = A & B;             // AND
+            4'b0101: temp_result = A | B;             // OR
+            4'b0110: temp_result = A ^ B;             // XOR
+            4'b0111: temp_result = ~A;                // COMPLEMENT (NOT)
+            4'b1000: temp_result = A << B[4:0];       // Logical Shift Left
+            4'b1001: temp_result = A >> B[4:0];       // Logical Shift Right
+            4'b1010: temp_result = $signed(A) >>> B[4:0]; // Arithmetic Shift Right
+            default: temp_result = 32'b0;
         endcase
         Result = temp_result[31:0];
     end
@@ -52,4 +52,5 @@ module ALU (
     assign Carry = temp_result[32];
     assign Overflow = ((A[31] == B[31]) && (Result[31] != A[31]));
 endmodule
+
 
